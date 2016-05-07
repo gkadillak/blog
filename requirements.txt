@@ -4,7 +4,7 @@ decorator==4.0.9
 Django==1.9.5
 django-extensions==1.6.3
 djangorestframework==3.3.3
-gnureadline==6.3.3
+gunicorn==19.4.5
 ipdb==0.10.0
 ipython==4.2.0
 ipython-genutils==0.1.0
