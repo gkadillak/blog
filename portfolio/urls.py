@@ -21,6 +21,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/', include('portfolio.blog.api.urls', namespace='blog')),
+    url(r'^api/blog/', include('portfolio.blog.api.urls', namespace='blog')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
