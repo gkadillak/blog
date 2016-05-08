@@ -21,10 +21,15 @@ BASE_DIR = dirname(dirname(abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'd)35mov4h)mptrojaegykns_iu46s7&bvx!=z@2(pfpl4h7_%*'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = []
+
+def environ(key, default=empty):
+    try:
+        return os.environ[key]
+    except KeyError:
+        if default is empty:
+            raise RuntimeError('environment variable "%s" does not exist' % (key))
+        return default
 
 
 # Application definition
@@ -77,12 +82,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
-    }
-}
+
 
 
 # Password validation
