@@ -23,14 +23,6 @@ SECRET_KEY = 'd)35mov4h)mptrojaegykns_iu46s7&bvx!=z@2(pfpl4h7_%*'
 
 ALLOWED_HOSTS = []
 
-def environ(key, default=empty):
-    try:
-        return os.environ[key]
-    except KeyError:
-        if default is empty:
-            raise RuntimeError('environment variable "%s" does not exist' % (key))
-        return default
-
 
 # Application definition
 
