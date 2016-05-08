@@ -17,9 +17,6 @@ BASE_DIR = Path(__file__).ancestor(3)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR.child('static')
 MEDIA_ROOT = BASE_DIR.child('media')
-STATICFILES_DIRS = (
-    BASE_DIR.child('assets'),
-)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
