@@ -11,6 +11,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfolio',
         'USER': 'blog_database_user',
+        'HOST': 'localhost',
         'PASSWORD': os.environ['DATABASE_PASSWORD'],
         'PORT': '',
     }
