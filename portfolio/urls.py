@@ -17,9 +17,18 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+import os
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api-auth/',
+        include('rest_framework.urls', namespace='rest_framework'),
+        ),
     url(r'^api/blog/', include('portfolio.blog.api.urls', namespace='blog')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+if os.environ.get('SETTINGS_FILE') == 'portfolio.settings.local':
+    urlpatterns += static(
+        settings.STATIC_URL,
+        document_root=settings.STATIC_ROOT
+    )
