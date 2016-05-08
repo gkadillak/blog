@@ -4,7 +4,7 @@ import os
 DEBUG = False
 
 
-environ('DJANGO_SETTINGS_MODULE') = 'portfolio.settings.production'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'portfolio.settings.production'
 
 DATABASES = {
     'default': {
