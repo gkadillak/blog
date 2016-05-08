@@ -3,6 +3,7 @@ import os
 
 DEBUG = False
 
+ALLOWED_HOSTS = ['*']
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'portfolio.settings.production'
 
