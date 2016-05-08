@@ -12,8 +12,14 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 from os.path import abspath, basename, dirname, join, normpath
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = dirname(dirname(abspath(__file__)))
+from unipath import Path
+BASE_DIR = Path(__file__).ancestor(3)
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR.child('static')
+MEDIA_ROOT = BASE_DIR.child('media')
+STATICFILES_DIRS = (
+    BASE_DIR.child('assets'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -55,7 +61,7 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR.child('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +126,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
-PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
-STATIC_ROOT = os.path.join(PACKAGE_ROOT, "site_media", "static")
-STATICFILES_DIRS = []
+

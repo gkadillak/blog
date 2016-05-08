@@ -16,3 +16,4 @@ ptyprocess==0.5.1
 simplegeneric==0.8.1
 six==1.10.0
 traitlets==4.2.1
+Unipath==1.1
