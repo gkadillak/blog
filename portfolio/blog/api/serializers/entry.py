@@ -5,6 +5,6 @@ from .tag import TagSerializer
 
 class EntrySerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True)
+
     class Meta:
         model = Entry
-
