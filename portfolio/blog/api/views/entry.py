@@ -1,12 +1,11 @@
 from rest_framework import filters
-from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import (ListModelMixin,
-                                   RetrieveModelMixin)
+from rest_framework.generics import GenericAPIView, ListAPIView
+from rest_framework.mixins import RetrieveModelMixin
 from portfolio.blog.models import Entry
 from portfolio.blog.api.serializers.entry import EntrySerializer
 
 
-class EntryView(GenericAPIView, ListModelMixin, RetrieveModelMixin):
+class EntryView(GenericAPIView, RetrieveModelMixin):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
     filter_backends = (filters.SearchFilter,)
@@ -14,3 +13,10 @@ class EntryView(GenericAPIView, ListModelMixin, RetrieveModelMixin):
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
+
+
+class EntriesView(ListAPIView):
+    queryset = Entry.objects.all()
+    serializer_class = EntrySerializer
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('body', 'headline', 'tags__name')
