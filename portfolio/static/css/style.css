@@ -1,0 +1,11 @@
+.center-entry {
+  display: inline-block;
+  padding-left: 20vw;
+  padding-right: 20vw;
+}
+@media (max-width: 768px) {
+  .center-entry {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}

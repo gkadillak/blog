@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'portfolio',
+    'portfolio.blog',
     'rest_framework',
     'corsheaders',
-    'portfolio.blog',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -60,7 +61,6 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR.child('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
