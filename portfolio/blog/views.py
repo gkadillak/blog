@@ -25,6 +25,7 @@ def blog(request):
 
     return render(request, 'blog/entries.html', ctx)
 
+
 def entries_with_given_tag(request, tag_name):
     entries = Entry.objects.filter(tag__name=tag_name)
 
@@ -54,8 +55,6 @@ def portfolio(request):
 
 
 def search_results(request, search_string):
-    import ipdb
-    ipdb.set_trace()
     query = None
     for word in search_string.split():
         subquery = Q(title__icontains=word) | Q(body__icontains=word)
