@@ -1,11 +1,1 @@
-.center-entry {
-  display: inline-block;
-  padding-left: 20vw;
-  padding-right: 20vw;
-}
-@media (max-width: 768px) {
-  .center-entry {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-}
+body{font-family:'Nobile',serif}.entry{margin-top:20px;margin-bottom:20px;padding-top:20px;padding-bottom:40px}.center-entry{display:inline-block;padding-left:20vw;padding-right:20vw}.center-entry h2{text-align:center}@media (max-width:768px){.center-entry{padding-left:5vw;padding-right:5vw}}

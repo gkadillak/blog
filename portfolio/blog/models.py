@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django_extensions.db.fields import AutoSlugField
 
 
 class TimeStampMixin(models.Model):
@@ -22,6 +23,8 @@ class Entry(TimeStampMixin):
     body = models.TextField()
     headline = models.CharField(max_length=120)
     tags = models.ManyToManyField(Tag, blank=True)
+    published = models.BooleanField(default=False)
+    slug = AutoSlugField(populate_from='headline', max_length=100)
 
     class Meta:
         verbose_name_plural = 'entries'

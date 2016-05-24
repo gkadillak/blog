@@ -4,8 +4,8 @@ from portfolio.blog.models import Entry, Tag
 
 @admin.register(Entry)
 class EntryAdmin(admin.ModelAdmin):
-    fields = ('headline', 'body', 'tags')
-    search_fields = ['headline', 'body', 'tags__name']
+    fields = ('headline', 'body', 'tags', 'published')
+    search_fields = ['headline', 'body', 'tags__name', 'published']
 
 
 @admin.register(Tag)
