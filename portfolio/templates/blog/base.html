@@ -1,10 +1,12 @@
 {% load staticfiles %}
+{% load render_bundle from webpack_loader %}
+
 
 
 <!DOCTYPE html>
 <head>
   <title>Garrett Kadillak</title>
-  <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Jaldi' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{% static 'vendors/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -47,7 +49,11 @@
   </div>
 </div>
 
+<div id="react-app">
+</div>
+
 <script src="{% static 'vendors/js/jquery.min.js' %}"></script>
 <script src="{% static 'vendors/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'blog/js/search_entries.js' %}"></script>
+{% render_bundle 'main' %}
 </html>

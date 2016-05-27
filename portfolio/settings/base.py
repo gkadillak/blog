@@ -16,6 +16,7 @@ from unipath import Path
 BASE_DIR = Path(__file__).ancestor(3)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR.child('static')
+STATICFILES_DIRS = [BASE_DIR.child('assets')]
 MEDIA_ROOT = BASE_DIR.child('media')
 
 # Quick-start development settings - unsuitable for production
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'portfolio',
     'portfolio.blog',
     'rest_framework',
-    'corsheaders',
+    'webpack_loader',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -79,7 +80,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': BASE_DIR.child('webpack-stats.json'),
+    }
+}
 
 
 # Password validation
@@ -107,9 +113,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
 }
-
-# Allow all http requests
-CORS_ORIGIN_ALLOW_ALL = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
