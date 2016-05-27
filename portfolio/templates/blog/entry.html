@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 
 {% block body %}
-<h1>{{entry.headline}}</h1>
-<p>{{entry.body}}</p>
+<h1>{{entry.headline|safe}}</h1>
+{{entry.body|safe}}
 {% endblock %}

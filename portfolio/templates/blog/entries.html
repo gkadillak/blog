@@ -5,7 +5,7 @@
 {% for entry in entries %}
 <div class="entry">
   <h2><a href="{% url 'blog:entry' entry.id %}">{{ entry.headline }}</a></h2>
-  <p>{{ entry.body|truncatewords:20 }}</p>
+  <p>{{ entry.body|truncatewords:20|safe }} </p>
   <span>{{entry.created|date:"j F, o"}}</span>
   <!-- Display all tags for given entry, display like posts when clicked -->
   <span>

@@ -1,9 +1,18 @@
 @import '_variables';
 
 body {
-    font-family: 'Merriweather Sans', sans-serif;
-}
+    font-family: 'Jaldi', sans-serif;
 
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.5em !important;
+    }
+    p {
+        font-size: 1.5em !important;
+    }
+    a, span {
+        font-size: 1.3em !important;
+    }
+}
 
 .entry {
     margin-top: 20px;
@@ -33,6 +42,15 @@ body {
     .link-custom {
         color: @font-color !important;
     }
-
-
+}
+.quote {
+    // padding-top: 20px;
+    // padding-bottom: 20px;
+    .quote-text {
+        font-style: italics;
+        color: black;
+    }
+    .author {
+        font-weight: 20px;
+    }
 }
