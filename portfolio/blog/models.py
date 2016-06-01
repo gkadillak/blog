@@ -24,7 +24,7 @@ class Entry(TimeStampMixin):
     headline = models.CharField(max_length=120)
     tags = models.ManyToManyField(Tag, blank=True)
     published = models.BooleanField(default=False)
-    preview = models.TextField()
+    preview = models.TextField(blank=True)
     slug = AutoSlugField(populate_from='headline', max_length=100)
 
     class Meta:
