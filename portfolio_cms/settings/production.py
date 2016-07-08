@@ -8,7 +8,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfolio_cms',
-        'USER': 'blog-user',
+        'USER': 'blog_database_user',
         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '',

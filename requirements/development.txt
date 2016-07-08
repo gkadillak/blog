@@ -20,6 +20,7 @@ djangocms-link==1.7.2
 djangocms-snippet==1.8.1
 easy-thumbnails==2.3
 greenlet==0.4.10
+gunicorn==19.6.0
 html5lib==0.9999999
 Pillow==3.2.0
 psycopg2==2.6.1
