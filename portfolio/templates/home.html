@@ -1,0 +1,109 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+  </head>
+  <body>
+    <div class="front-header">
+      <div class="container">
+        <h1 class="center-text">Garrett Kadillak</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <p>
+            The journey into software started with Hollywood. <em>Social Network</em>, specifically. All of this talk
+            about algorithms and being 'plugged in' and hacking were all completely alien to me. I had no way to grasp
+            the reality that these characters being portrayed lived in. I came out of the movie with a burning curiousity. I
+            desperately wanted to find out more about that environment.
+          </p>
+          <p>
+            This curiousity culminated in an online Java course via Udemy. The soft spoken instructors walked through the syntax
+            of the language, object oriented programming, and a brief foray into algorithms. I would stay up late to code
+            during school nights and I would rush to get my regular work done so I could have free time to advance further
+            in the class. Needless to say, I quickly exhausted the introductory course and I was dismayed. I was
+            simply wandering in the software sphere, unsure of where to head next. The courses that were best advertised
+            were web development courses. So, I took up JavaScript (jQuery specifically) along with HTML5 and some
+            basics of digital design.
+          </p>
+
+          <p>
+            I was doing exactly what I wanted to do! However, my enthusiasm was waning. I couldn't answer the simple question
+            of how to utilize these skills, how to deploy a website, how to work in a team. There were so many things I didn't
+            know I didn't know. So, I put it down coding for a while. Even though I tried to forget about the things I learned
+            and forced myself to face the reality that I was in school to be a different brand of engineering - mechanical.
+            However, there was always that nagging in the back of my head. <em>What if you could do this full time? What if
+            you got your questions answered and then some? What would that look like?</em> 
+          </p>
+
+          <p>
+            I was fortunate enough to be given a second chance to hone my skills durin my senior year at Colorado
+            State University. I was given the opportunity to work on a user interface for the EcoCAR challenge. The most
+            tell tale sign of my journey (thus far) was after our professor pitched each one of the senior design projects,
+            my peers unanimously dubbed the user interface project their least favorite project.
+             I was destined for software at this point - I just didn't know it.
+          </p>
+
+          <p>
+            I graduated college and found out that there were these courses that you could take that would give you
+            all of the essential skills you needed in order to become a developer. It couldn't have come at a better time.
+            I had been working at a small startup wandering and wondering what I would do. Now there was a clear direction
+            which way to go. So I purchased a one way ticket to San Francisco and stayed with my gracious sister on her
+            couch for 3 months.
+          </p>
+
+          <p>
+            The bootcamp was life changing and challenging. I came out of it with life long friends along with the skills
+            to start a career. I was also fortunate enough to be able to work at the bootcamp after I graduated. Being a
+            mentor to budding developers was its own experience that I would do all over again if given the chance. Concepts
+            that I thought I knew were exposed as misunderstood as my own knowledge grew.
+          </p>
+
+          <p>
+            After the bootcamp experience ended, I moved on to being a core contributor for an open source project called
+            Rockstor. I had worked with the founder at the bootcamp and his idea was fascinating. Open source took time
+            to adjust to but he was a patient, understading mentor and helped guide me along until I met my next opportunity.
+          </p>
+
+          <p>
+            My time at FlightCar once again took adjusting as it was a more robust engineering team with dedicated groups.
+            The team there was an excellent fit for me as I learned about agile development, production level Django,
+            as well as working with a mobile team.
+          </p>
+
+          <p>
+            Below are some projects that I've worked on. They're always being improved upon!
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="{% static 'portfolio/img/d3-collider.png' %}" alt="D3 collider game">
+            <div class="caption">
+              <h3>D3 Collider Game</h3>
+              <p>See how long you can last without getting collided!</p>
+              <p><a href="https://gkadillak.github.io/d3-collider/" class="btn btn-primary" role="button">Visit Site</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="{% static 'portfolio/img/github-notetaker.png' %}" alt="GitHub Notetaker">
+            <div class="caption">
+              <h3>GitHub Notetaker</h3>
+              <p>Get information about a GitHub user, take notes on them</p>
+              <p><a href="https://gkadillak.github.io/github-notetaker/" class="btn btn-primary" role="button">Visit Site</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'portfolio/js/index.js' %}"></script>
+  </body>
+</html>
+
