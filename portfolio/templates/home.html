@@ -4,17 +4,20 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
   </head>
   <body>
     <div class="front-header">
+
       <div class="container">
-        <h1 class="center-text">Garrett Kadillak</h1>
+        <div class="row">
+          <h1 class="text-center">Garrett Kadillak</h1>
+        </div>
       </div>
-    </div>
-    <div class="container">
       <div class="row">
-        <div class="col-xs-6">
+
+        <div class="col-xs-6 col-xs-offset-3">
           <p>
             The journey into software started with Hollywood. <em>Social Network</em>, specifically. All of this talk
             about algorithms and being 'plugged in' and hacking were all completely alien to me. I had no way to grasp
@@ -81,7 +84,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-4 col-md-offset-2">
           <div class="thumbnail">
             <img src="{% static 'portfolio/img/d3-collider.png' %}" alt="D3 collider game">
             <div class="caption">
