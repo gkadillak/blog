@@ -2,6 +2,6 @@
 
 {% block body %}
 	{% for post in posts %}
-		{% include 'partials/post.html' with post=post %}
+		{% include 'partials/post_preview.html' with post=post %}
 	{% endfor %}
 {% endblock %}

@@ -26,3 +26,8 @@ def bio(request):
 
 def portfolio(request):
     return render(request, 'portfolio.html')
+
+
+def post(request, id):
+    ctx = {'post': Post.objects.get(id=id)}
+    return render(request, "post.html", ctx)
