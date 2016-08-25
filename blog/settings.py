@@ -23,7 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*czcbj+=6j2c&aa++l%b7v5mnpan#c%9lq^39qsi_&0hxwdu=='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('TESTING')
+if os.environ.get('TESTING') == 'True':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -76,7 +79,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 
-if os.environ.get('TESTING'):
+if os.environ.get('TESTING') == 'True':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
