@@ -10,6 +10,8 @@ def create_photo_directory(headline, *datetime_obj):
     input: python datetime object
     output: boolean indicating success or failure of directory creation
     """
+    # TODO: This should create a dictionary in the project root
+    # --> Make sure that the test is updated
     if not datetime_obj:
         datetime_obj = datetime.now()
     underscore_headline = headline.replace(' ', '_')
