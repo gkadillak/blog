@@ -1,4 +1,5 @@
 {% extends 'partials/base.html' %}
+{% load portfolio_tags %}
 
 {% block body %}
 <div class="container">
@@ -7,8 +8,10 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-10 col-md-offset-1">
-      {{post.body|safe}}
+      {% render_this post.body|safe %}
     </div>
   </div>
 </div>
+
+
 {% endblock %}

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
+    'django_extensions',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -84,6 +85,7 @@ if os.environ.get('TESTING') == 'True':
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'blog',
+            'user': 'blogger',
             'HOST': 'localhost',
             'PORT': '',
         }

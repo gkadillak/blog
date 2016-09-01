@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def home(request):
-    post_list = Post.objects.filter(id__gt=1).order_by('-created')
+    post_list = Post.objects.filter(id__gt=1, published=True).order_by('-created')
     paginator = Paginator(post_list, 5)
     page = request.GET.get('page')
 
@@ -29,5 +29,6 @@ def portfolio(request):
 
 
 def post(request, id):
+
     ctx = {'post': Post.objects.get(id=id)}
     return render(request, "post.html", ctx)

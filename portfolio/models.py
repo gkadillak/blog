@@ -1,5 +1,6 @@
 from django.db import models
 import time
+from .utils import create_photo_directory
 
 
 class TimeStampModel(models.Model):
@@ -17,15 +18,14 @@ class TimeStampModel(models.Model):
 class Post(TimeStampModel):
     body = models.TextField()
     headline = models.CharField(max_length=140)
+    published = models.BooleanField(default=True)
+
+    def create_photo_directory(self):
+        return create_photo_directory(self.headline)
+
+    def save(self, *args, **kwargs):
+        self.create_photo_directory()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return time.strftime('{0}: %A, %B %e %G'.format(self.headline))
-
-
-class Photo(models.Model):
-    post = models.ForeignKey('Post', related_name='posts')
-    photo = models.ImageField()
-    description = models.CharField(max_length=140)
-
-    def __str__(self):
-        return time.strftime(time.strftime('{0}: %A, %B %e %G'.format(self.description)))

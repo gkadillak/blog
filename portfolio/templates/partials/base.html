@@ -1,11 +1,14 @@
 {% load staticfiles %}
+{% load portfolio_tags %}
+
 
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="{% static 'portfolio/ext/css/bootstrap.min.css' %}" >
+
+    <link rel="stylesheet" href="{% static "portfolio/ext/css/bootstrap.min.css" %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/style.css' %}">
     {% block extra_css %}{% endblock %}
   </head>
   <body>
@@ -15,9 +18,9 @@
     {% block body %}{% endblock %}
 
 
-    <script src="{% static 'portfolio/js/index.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/index.js' %}"></script>
     <script src="{% static 'portfolio/ext/js/jquery-3.1.0.min.js' %}"></script>
-    <script src="{% static 'portfolio/ext/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'portfolio/ext/js/bootstrap.min.js' %}"></script>
     {% block extra_js %}{% endblock %}
   </body>
 </html>

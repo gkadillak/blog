@@ -5,6 +5,14 @@
 .custom-nav {
   border-radius: 0;
 }
+.custom-nav .nav-img {
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+}
+.custom-nav .logo-link {
+  height: 50px;
+}
 .post-preview {
   font-size: 24px;
 }
