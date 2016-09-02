@@ -17,7 +17,7 @@ class UtilsTest(TestCase):
 
     @freeze_time("2016-08-19")
     def test_create_photo_directory(self):
-        create_photo_directory(timezone.now(), self.headline)
+        create_photo_directory(self.headline)
         created_dir = Path(
             './portfolio/static/portfolio/media/2016_08_19_Test_headline')
         self.assertTrue(created_dir.exists())

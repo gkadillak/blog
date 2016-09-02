@@ -20,7 +20,7 @@ class HighlightNode(template.Node):
     def render(self, context):
         output = self.nodelist.render(context)
 
-        formatter = HtmlFormatter(linenos=True)
+        formatter = HtmlFormatter(linenos=True, cssclass='center')
         results = highlight(output, PythonLexer(stripall=True), formatter)
         return results
 
