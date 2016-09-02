@@ -76,6 +76,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
+SHELL_PLUS = 'bpython'
+
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases

@@ -28,7 +28,7 @@ def portfolio(request):
     return render(request, 'portfolio.html')
 
 
-def post(request, id):
+def post(request, slug):
 
-    ctx = {'post': Post.objects.get(id=id)}
+    ctx = {'post': Post.objects.get(slug=slug)}
     return render(request, "post.html", ctx)

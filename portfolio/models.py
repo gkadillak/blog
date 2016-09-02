@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 import time
 from .utils import create_photo_directory
 
@@ -19,12 +20,14 @@ class Post(TimeStampModel):
     body = models.TextField()
     headline = models.CharField(max_length=140)
     published = models.BooleanField(default=True)
+    slug = models.SlugField()
 
     def create_photo_directory(self):
         return create_photo_directory(self.headline)
 
     def save(self, *args, **kwargs):
         self.create_photo_directory()
+        self.slug = slugify(self.headline)
         super().save(*args, **kwargs)
 
     def __str__(self):
