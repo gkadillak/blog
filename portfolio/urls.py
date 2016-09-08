@@ -4,6 +4,6 @@ from .views import bio, portfolio, home, post
 urlpatterns = [
     url(r'^bio/?$', bio, name='bio'),
     url(r'^portfolio/?$', portfolio, name='projects'),
-    url(r'^(?P<slug>\w+)/?$', post, name='post'),
+    url(r'^(?P<slug>[-\w]+)/?$', post, name='post'),
     url(r'^$', home, name='home'),
 ]
