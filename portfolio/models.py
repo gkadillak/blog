@@ -31,4 +31,4 @@ class Post(TimeStampModel):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return time.strftime('{0}: %A, %B %e %G'.format(self.headline))
+        return self.updated.strftime('{0}: %A, %B %e %G'.format(self.headline))
