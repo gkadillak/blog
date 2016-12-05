@@ -1,6 +1,17 @@
 .body {
   padding-top: 50px;
 }
+.body h1,
+.body h2,
+.body h3,
+.body h4,
+.body h5,
+.body h6 {
+  font-family: 'Cardo', serif;
+}
+.body p {
+  font-family: 'Open Sans', sans-serif;
+}
 .front-header {
   padding-top: 60px;
   padding-bottom: 60px;
