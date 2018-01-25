@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from portfolio.models import Post
+from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+from portfolio.models import Post
 
 
 def home(request):
@@ -31,3 +33,6 @@ def portfolio(request):
 def post(request, slug):
     ctx = {'post': Post.objects.get(slug=slug)}
     return render(request, "portfolio/post.html", ctx)
+
+def ssl_challenge(request, challenge):
+    return HttpResponse(challenge, content_type="text/plain")
