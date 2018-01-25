@@ -1,7 +1,0 @@
-{% extends 'partials/base.html' %}
-
-{% block body %}
-	{% for post in posts %}
-		{% include 'partials/post_preview.html' with post=post %}
-  {% endfor %}
-{% endblock %}

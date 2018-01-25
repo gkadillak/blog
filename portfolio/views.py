@@ -15,20 +15,19 @@ def home(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
-    return render(request, 'home.html', {'posts': posts})
+    return render(request, 'portfolio/home.html', {'posts': posts})
 
 
 def bio(request):
     # First post is the bio
     ctx = {'post': Post.objects.first()}
-    return render(request, 'bio.html', ctx)
+    return render(request, 'portfolio/bio.html', ctx)
 
 
 def portfolio(request):
-    return render(request, 'portfolio.html')
+    return render(request, 'portfolio/portfolio.html')
 
 
 def post(request, slug):
-
     ctx = {'post': Post.objects.get(slug=slug)}
-    return render(request, "post.html", ctx)
+    return render(request, "portfolio/post.html", ctx)
