@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import bio, portfolio, home, post, ssl_challenge
+from .views import bio, portfolio, home, post
 
 
 app_name = 'portfolio'
