@@ -33,6 +33,3 @@ def portfolio(request):
 def post(request, slug):
     ctx = {'post': Post.objects.get(slug=slug)}
     return render(request, "portfolio/post.html", ctx)
-
-def ssl_challenge(request, challenge):
-    return HttpResponse(challenge.split('.')[0], content_type="text/plain")
