@@ -11,12 +11,12 @@ class ViewsTest(TestCase):
     @mock.patch("webhooks.views.deploying.deploy_project")
     def test_post_request_for_merged_pull_request(self, mock_deploy_project):
         with open(os.getcwd() + '/webhooks/tests/fixtures/successful_merge_event.json') as json_file:
-            with mock.patch("webhooks.views.os.environ", {"X_HUB_SIGNATURE": "PARTY-PLAZA"}):
+            with mock.patch("webhooks.views.os.environ", {"X_HUB_SIGNATURE": "somedumbkey"}):
                 client = Client()
                 response = client.post('/webhooks/deploy',
                                        data=json_file.read(),
                                        content_type="application/json",
-                                       HTTP_X_HUB_SIGNATURE="PARTY-PLAZA")
+                                       HTTP_X_HUB_SIGNATURE="sha1=somedumbhash")
                 self.assertEqual(mock_deploy_project.call_count, 1)
                 self.assertEqual(response.status_code, 200)
 
