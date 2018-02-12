@@ -26,7 +26,7 @@ def restart_gunicorn():
 
 @log_exceptions
 def restart_nginx():
-    subprocess.check_output('sudo /usr/sbin/service gunicorn restart'.split(' '), stderr=subprocess.STDOUT)
+    subprocess.check_output('sudo /usr/sbin/service nginx restart'.split(' '))
 
 
 @log_exceptions
