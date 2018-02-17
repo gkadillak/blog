@@ -15,7 +15,7 @@ def log_exceptions(func):
         try:
             func(*args, **kwargs)
         except subprocess.CalledProcessError as e:
-            logger.error('%s: %s' % (e.__name__, e.output))
+            logger.error('Problem with %s: %s', e.__name__, e.output)
     return wrapped_func
 
 

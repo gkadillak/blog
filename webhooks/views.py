@@ -14,8 +14,7 @@ logger = logging.getLogger(__name__)
 
 @http.require_POST
 def deploy(request):
-    # check if the given signature of X_HUB_SIGNATURE matches 'sha1=' + hash
-    # make sure to use a secure co
+    logger.info('POST request to /webhooks/deploy: %s', request.body)
     if not request.META.get('HTTP_X_HUB_SIGNATURE'):
         logger.error('HTTP_X_HUB_SIGNATURE required but not given')
         return HttpResponse(status=403)
